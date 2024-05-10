@@ -16,8 +16,8 @@ resource "ovh_cloud_project_user_s3_policy" "write_policy" {
         "s3:GetBucketLocation"
       ],
       "Resource" : [
-        "arn:aws:s3:::${aws_s3_bucket.b.bucket}",
-        "arn:aws:s3:::${aws_s3_bucket.b.bucket}/*"
+        "arn:aws:s3:::${aws_s3_bucket.bucket.bucket}",
+        "arn:aws:s3:::${aws_s3_bucket.bucket.bucket}/*"
       ]
     }]
   })
@@ -37,8 +37,8 @@ resource "ovh_cloud_project_user_s3_policy" "read_policy" {
         "s3:ListBucketMultipartUploads"
       ],
       "Resource" : [
-        "arn:aws:s3:::${aws_s3_bucket.b.bucket}",
-        "arn:aws:s3:::${aws_s3_bucket.b.bucket}/*"
+        "arn:aws:s3:::${aws_s3_bucket.bucket.bucket}",
+        "arn:aws:s3:::${aws_s3_bucket.bucket.bucket}/*"
       ]
     }]
   })

@@ -9,17 +9,31 @@ variable "region" {
   default     = "DE1"
 }
 
-variable "s3_endpoint" {
-  type    = string
-  default = "https://s3.gra.io.cloud.ovh.net"
-}
+variable "type" {
+  description = "Type of S3 bucket to create (standard, high_performance, swift)."
+  type        = string
+  default     = "standard"
 
-variable "user_desc_prefix" {
-  type    = string
-  default = "[TF] User created by s3 terraform script"
+  validation {
+    condition     = contains(["standard", "high_performance", "swift"], var.type)
+    error_message = "Valid values for type are (standard, high_performance, swift)"
+  }
 }
 
 variable "bucket_name" {
-  type    = string
-  default = "tf-s3-bucket-only"
+  description = "Name of the bucket."
+  type        = string
+  default     = "tf-s3-bucket-only"
+}
+
+variable "bucket_prefix" {
+  description = "Prefix to append to tbe bucket name"
+  type        = string
+  default     = ""
+}
+
+variable "tags" {
+  description = "Key/value pairs to add to the bucket."
+  type        = map(string)
+  default     = {}
 }

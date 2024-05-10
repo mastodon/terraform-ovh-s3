@@ -1,3 +1,5 @@
-resource "aws_s3_bucket" "b" {
-  bucket = "${var.project_id}-${var.bucket_name}"
+resource "aws_s3_bucket" "bucket" {
+  bucket = var.bucket_name
+
+  tags = var.tags
 }

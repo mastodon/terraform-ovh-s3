@@ -1,3 +1,11 @@
+locals {
+  standard         = var.type == "standard" ? "https://s3.${var.region}.io.cloud.ovh.net" : ""
+  high_performance = var.type == "high_performance" ? "https://s3.${var.region}.perf.cloud.ovh.net" : ""
+  swift            = var.type == "swift" ? "https://s3.${var.region}.cloud.ovh.net" : ""
+
+  endpoint = coalesce(local.standard, local.high_performance, local.swift)
+}
+
 terraform {
   required_providers {
     aws = {
@@ -24,6 +32,6 @@ provider "aws" {
   # the gra region is unknown to AWS hence skipping is needed.
   skip_region_validation = true
   endpoints {
-    s3 = var.s3_endpoint
+    s3 = local.endpoint
   }
 }
