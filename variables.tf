@@ -42,15 +42,3 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
-
-variable "admin_access_key" {
-  description = "Access key for pre-existing admin user (will not create a new admin user if given)."
-  type        = string
-  default     = ""
-}
-
-variable "admin_secret_key" {
-  description = "Secret key for pre-existing admin user."
-  type        = string
-  default     = ""
-}
