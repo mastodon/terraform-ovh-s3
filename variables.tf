@@ -6,7 +6,12 @@ variable "project_id" {
 variable "region" {
   description = "Region in which to create the various resources."
   type        = string
-  default     = "DE1"
+  default     = "de"
+
+  validation {
+    condition     = contains(["gra", "sbg", "de", "bhs", "rbx", "waw", "uk"], var.region)
+    error_message = "Valid values for region are (bhs, de, gra, rbx, sbg, uk, waw)"
+  }
 }
 
 variable "type" {
