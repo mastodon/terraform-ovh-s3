@@ -4,6 +4,9 @@ locals {
   swift            = var.type == "swift" ? "https://s3.${var.region}.cloud.ovh.net" : ""
 
   endpoint = coalesce(local.standard, local.high_performance, local.swift)
+
+  access_key = coalesce(var.admin_access_key, ovh_cloud_project_user_s3_credential.admin_cred[0].access_key_id)
+  secret_key = coalesce(var.admin_secret_key, ovh_cloud_project_user_s3_credential.admin_cred[0].secret_access_key)
 }
 
 terraform {
@@ -23,8 +26,8 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region     = var.region
-  access_key = ovh_cloud_project_user_s3_credential.admin_cred.access_key_id
-  secret_key = ovh_cloud_project_user_s3_credential.admin_cred.secret_access_key
+  access_key = local.access_key
+  secret_key = local.secret_key
 
   #OVH implementation has no STS service
   skip_credentials_validation = true

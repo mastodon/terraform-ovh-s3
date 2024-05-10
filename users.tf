@@ -1,13 +1,17 @@
 # Admin user
 resource "ovh_cloud_project_user" "admin_user" {
+  count = var.admin_access_key == "" ? 1 : 0
+
   service_name = var.project_id
   description  = "[terraform] Admin user for S3 bucket - ${var.bucket_name}"
   role_name    = "objectstore_operator"
 }
 
 resource "ovh_cloud_project_user_s3_credential" "admin_cred" {
+  count = var.admin_access_key == "" ? 1 : 0
+
   service_name = var.project_id
-  user_id      = ovh_cloud_project_user.admin_user.id
+  user_id      = ovh_cloud_project_user.admin_user[0].id
 }
 
 # Read/write user
