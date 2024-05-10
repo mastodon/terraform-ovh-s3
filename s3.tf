@@ -7,8 +7,8 @@ resource "ovh_cloud_project_user" "admin_user" {
 }
 
 resource "ovh_cloud_project_user_s3_credential" "admin_cred" {
-  service_name = var.ovh_public_cloud_project_id
-  user_id      = ovh_cloud_project_user.s3_admin_user.id
+  service_name = var.project_id
+  user_id      = ovh_cloud_project_user.admin_user.id
 }
 
 # Bucket
