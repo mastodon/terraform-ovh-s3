@@ -27,7 +27,7 @@ variable "bucket_name" {
 }
 
 variable "bucket_prefix" {
-  description = "Prefix to append to tbe bucket name"
+  description = "Prefix to append to tbe bucket name (inserted as {prefix}-{name})."
   type        = string
   default     = ""
 }
