@@ -9,14 +9,14 @@ Note: This module makes use of the AWS terraform provider, but there is a known 
 | Name | Version |
 |------|---------|
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.49 |
-| <a name="requirement_ovh"></a> [ovh](#requirement\_ovh) | ~> 0.44 |
+| <a name="requirement_ovh"></a> [ovh](#requirement\_ovh) | ~> 2.5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.49.0 |
-| <a name="provider_ovh"></a> [ovh](#provider\_ovh) | 0.44.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.100.0 |
+| <a name="provider_ovh"></a> [ovh](#provider\_ovh) | 2.5.0 |
 
 ## Modules
 
