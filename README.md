@@ -8,7 +8,6 @@ Note: This module makes use of the AWS terraform provider, but there is a known 
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.49 |
 | <a name="requirement_ovh"></a> [ovh](#requirement\_ovh) | ~> 2.5.0 |
 
 ## Providers
