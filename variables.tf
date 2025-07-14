@@ -24,6 +24,11 @@ variable "bucket_name" {
   description = "Name of the bucket."
   type        = string
   default     = "tf-s3-bucket-only"
+
+  validation {
+    condition     = can(regex("^[a-z0-9][a-z0-9\\.\\-]{1,61}[a-z0-9]$", var.bucket_name))
+    error_message = "Invalid bucket name. Expecting '^[a-z0-9][a-z0-9\\.\\-]{1,61}[a-z0-9]$'"
+  }
 }
 
 variable "bucket_prefix" {
