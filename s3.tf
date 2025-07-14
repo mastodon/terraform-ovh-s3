@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "bucket" {
-  bucket = var.bucket_prefix != "" ? "${var.bucket_prefix}-${var.bucket_name}" : var.bucket_name
-
-  tags = var.tags
+resource "ovh_cloud_project_storage" "storage" {
+  service_name = var.project_id
+  region_name  = var.region
+  name         = var.bucket_name
 }
