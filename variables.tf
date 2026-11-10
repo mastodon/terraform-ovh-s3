@@ -63,5 +63,5 @@ variable "object_lock_mode" {
 variable "object_lock_retention_days" {
   description = "Number of days to retain objects. Must be at least 1."
   type        = number
-  default     = 1
+  default     = 0
 }
