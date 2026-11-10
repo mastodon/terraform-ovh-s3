@@ -58,10 +58,15 @@ variable "object_lock_mode" {
   description = "Object lock (WORM) mode."
   type        = string
   default     = ""
+
+  validation {
+    condition     = contains(["", "COMPLIANCE", "GOVERNANCE"])
+    error_message = "Invalid object lock mode. When set, must be one of: GOVERNANCE, COMPLIANCE"
+  }
 }
 
 variable "object_lock_retention_days" {
   description = "Number of days to retain objects. Must be at least 1."
   type        = number
-  default     = 0
+  default     = 1
 }
