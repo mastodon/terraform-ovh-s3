@@ -60,7 +60,7 @@ variable "object_lock_mode" {
   default     = ""
 
   validation {
-    condition     = contains(["", "COMPLIANCE", "GOVERNANCE"])
+    condition     = contains(["", "COMPLIANCE", "GOVERNANCE"], var.object_lock_mode)
     error_message = "Invalid object lock mode. When set, must be one of: GOVERNANCE, COMPLIANCE"
   }
 }
