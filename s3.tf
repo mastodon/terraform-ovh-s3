@@ -1,5 +1,5 @@
-resource "ovh_cloud_project_storage" "storage" {
+resource "ovh_cloud_storage_object_bucket" "storage" {
   service_name = var.project_id
-  region_name  = var.region
+  region       = var.region
   name         = var.bucket_name
 }

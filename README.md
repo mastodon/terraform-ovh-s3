@@ -24,7 +24,6 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [ovh_cloud_project_storage.storage](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_storage) | resource |
 | [ovh_cloud_project_user.admin_user](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_user) | resource |
 | [ovh_cloud_project_user.read_user](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_user) | resource |
 | [ovh_cloud_project_user.write_user](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_user) | resource |
@@ -33,6 +32,7 @@ No modules.
 | [ovh_cloud_project_user_s3_credential.write_cred](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_user_s3_credential) | resource |
 | [ovh_cloud_project_user_s3_policy.read_policy](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_user_s3_policy) | resource |
 | [ovh_cloud_project_user_s3_policy.write_policy](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_user_s3_policy) | resource |
+| [ovh_cloud_storage_object_bucket.storage](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_storage_object_bucket) | resource |
 
 ## Inputs
 
