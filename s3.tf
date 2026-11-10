@@ -10,7 +10,7 @@ resource "ovh_cloud_storage_object_bucket" "bucket" {
   object_lock = var.object_lock_mode != "" ? {
     mode           = var.object_lock_mode
     retention_days = var.object_lock_retention_days
-  } : {}
+  } : null
 
   tags = var.tags
 }
