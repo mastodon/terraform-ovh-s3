@@ -32,7 +32,7 @@ No modules.
 | [ovh_cloud_project_user_s3_credential.write_cred](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_user_s3_credential) | resource |
 | [ovh_cloud_project_user_s3_policy.read_policy](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_user_s3_policy) | resource |
 | [ovh_cloud_project_user_s3_policy.write_policy](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_user_s3_policy) | resource |
-| [ovh_cloud_storage_object_bucket.storage](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_storage_object_bucket) | resource |
+| [ovh_cloud_storage_object_bucket.bucket](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_storage_object_bucket) | resource |
 
 ## Inputs
 
