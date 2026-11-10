@@ -40,10 +40,13 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | Name of the bucket. | `string` | `"tf-s3-bucket-only"` | no |
 | <a name="input_bucket_prefix"></a> [bucket\_prefix](#input\_bucket\_prefix) | Prefix to append to tbe bucket name (inserted as {prefix}-{name}). | `string` | `""` | no |
+| <a name="input_object_lock_mode"></a> [object\_lock\_mode](#input\_object\_lock\_mode) | Object lock (WORM) mode. | `string` | `""` | no |
+| <a name="input_object_lock_retention_days"></a> [object\_lock\_retention\_days](#input\_object\_lock\_retention\_days) | Number of days to retain objects. Must be at least 1. | `number` | `1` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The ID of the Public Cloud project the resources will be created in. | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region in which to create the various resources. | `string` | `"de"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Key/value pairs to add to the bucket. | `map(string)` | `{}` | no |
 | <a name="input_type"></a> [type](#input\_type) | Type of S3 bucket to create (standard, high\_performance, swift). | `string` | `"standard"` | no |
+| <a name="input_versioning"></a> [versioning](#input\_versioning) | What versioning status to assign. | `string` | `"DISABLED"` | no |
 
 ## Outputs
 

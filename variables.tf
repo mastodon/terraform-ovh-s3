@@ -42,3 +42,26 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "versioning" {
+  description = "What versioning status to assign."
+  type        = string
+  default     = "DISABLED"
+
+  validation {
+    condition     = contains(["DISABLED", "ENABLED", "SUSPENDED"], var.versioning)
+    error_message = "Invalid bucket versioning. Must be one of: DISABLED, ENABLED, SUSPENDED"
+  }
+}
+
+variable "object_lock_mode" {
+  description = "Object lock (WORM) mode."
+  type        = string
+  default     = ""
+}
+
+variable "object_lock_retention_days" {
+  description = "Number of days to retain objects. Must be at least 1."
+  type        = number
+  default     = 1
+}
