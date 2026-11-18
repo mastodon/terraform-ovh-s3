@@ -56,13 +56,8 @@ variable "versioning" {
 
 variable "object_lock" {
   description = "Whether to enable object lock"
-  type        = string
-  default     = "DISABLED"
-
-  validation {
-    condition     = contains(["ENABLED", "DISABLED"], var.object_lock)
-    error_message = "Invalid object lock. Must be one of: ENABLED, DISABLED"
-  }
+  type        = bool
+  default     = false
 }
 
 variable "object_lock_mode" {

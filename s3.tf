@@ -1,3 +1,13 @@
+locals {
+  object_lock_enabled = {
+    mode           = var.object_lock_mode
+    retention_days = var.object_lock_retention_days
+  }
+  object_lock_disabled = {
+    status = "DISABLED"
+  }
+}
+
 resource "ovh_cloud_storage_object_bucket" "bucket" {
   service_name = var.project_id
   region       = var.region
@@ -7,10 +17,7 @@ resource "ovh_cloud_storage_object_bucket" "bucket" {
     status = var.versioning
   }
 
-  object_lock = var.object_lock_mode != "" ? {
-    mode           = var.object_lock_mode
-    retention_days = var.object_lock_retention_days
-  } : null
+  object_lock = var.object_lock ? local.object_lock_enabled : local.object_lock_disabled
 
   tags = var.tags
 }
