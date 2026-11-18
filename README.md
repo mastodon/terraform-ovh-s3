@@ -8,7 +8,7 @@ Note: This module makes use of the AWS terraform provider, but there is a known 
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_ovh"></a> [ovh](#requirement\_ovh) | ~> 2.24.0 |
+| <a name="requirement_ovh"></a> [ovh](#requirement\_ovh) | ~> 2.25.0 |
 
 ## Providers
 
@@ -40,7 +40,8 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | Name of the bucket. | `string` | `"tf-s3-bucket-only"` | no |
 | <a name="input_bucket_prefix"></a> [bucket\_prefix](#input\_bucket\_prefix) | Prefix to append to tbe bucket name (inserted as {prefix}-{name}). | `string` | `""` | no |
-| <a name="input_object_lock_mode"></a> [object\_lock\_mode](#input\_object\_lock\_mode) | Object lock (WORM) mode. | `string` | `""` | no |
+| <a name="input_object_lock"></a> [object\_lock](#input\_object\_lock) | Whether to enable object lock | `string` | `"DISABLED"` | no |
+| <a name="input_object_lock_mode"></a> [object\_lock\_mode](#input\_object\_lock\_mode) | Object lock (WORM) mode. | `string` | `"COMPLIANCE"` | no |
 | <a name="input_object_lock_retention_days"></a> [object\_lock\_retention\_days](#input\_object\_lock\_retention\_days) | Number of days to retain objects. Must be at least 1. | `number` | `1` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The ID of the Public Cloud project the resources will be created in. | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region in which to create the various resources. | `string` | `"de"` | no |

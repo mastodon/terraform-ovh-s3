@@ -54,14 +54,25 @@ variable "versioning" {
   }
 }
 
+variable "object_lock" {
+  description = "Whether to enable object lock"
+  type        = string
+  default     = "DISABLED"
+
+  validation {
+    condition     = contains(["ENABLED", "DISABLED"], var.object_lock)
+    error_message = "Invalid object lock. Must be one of: ENABLED, DISABLED"
+  }
+}
+
 variable "object_lock_mode" {
   description = "Object lock (WORM) mode."
   type        = string
-  default     = ""
+  default     = "COMPLIANCE"
 
   validation {
-    condition     = contains(["", "COMPLIANCE", "GOVERNANCE"], var.object_lock_mode)
-    error_message = "Invalid object lock mode. When set, must be one of: GOVERNANCE, COMPLIANCE"
+    condition     = contains(["COMPLIANCE", "GOVERNANCE"], var.object_lock_mode)
+    error_message = "Invalid object lock mode. Must be one of: GOVERNANCE, COMPLIANCE"
   }
 }
 
