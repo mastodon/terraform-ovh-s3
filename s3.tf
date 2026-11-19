@@ -17,7 +17,7 @@ resource "ovh_cloud_storage_object_bucket" "bucket" {
     status = var.versioning
   }
 
-  object_lock = var.object_lock ? local.object_lock_enabled : local.object_lock_disabled
+  object_lock = null
 
   tags = length(var.tags) > 0 ? var.tags : null
 }
