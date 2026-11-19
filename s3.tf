@@ -1,10 +1,10 @@
 locals {
-  object_lock = var.object.lock_status == "ENABLED" ? {
-    status         = "ENABLED"
+  object_lock = var.object_lock_status == "ENABLED" ? {
+    status         = var.object_lock_status
     mode           = var.object_lock_mode
     retention_days = var.object_lock_retention_days
     } : {
-    status = "DISABLED"
+    status = var.object_lock_status
   }
 }
 
