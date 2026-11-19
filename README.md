@@ -43,6 +43,7 @@ No modules.
 | <a name="input_object_lock"></a> [object\_lock](#input\_object\_lock) | Whether to enable object lock | `bool` | `false` | no |
 | <a name="input_object_lock_mode"></a> [object\_lock\_mode](#input\_object\_lock\_mode) | Object lock (WORM) mode. | `string` | `"COMPLIANCE"` | no |
 | <a name="input_object_lock_retention_days"></a> [object\_lock\_retention\_days](#input\_object\_lock\_retention\_days) | Number of days to retain objects. Must be at least 1. | `number` | `1` | no |
+| <a name="input_object_lock_status"></a> [object\_lock\_status](#input\_object\_lock\_status) | What to set the 'status' of the object lock object created | `string` | `"ENABLED"` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The ID of the Public Cloud project the resources will be created in. | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region in which to create the various resources. | `string` | `"de"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Key/value pairs to add to the bucket. | `map(string)` | `{}` | no |

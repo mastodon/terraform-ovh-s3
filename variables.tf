@@ -60,6 +60,17 @@ variable "object_lock" {
   default     = false
 }
 
+variable "object_lock_status" {
+  description = "What to set the 'status' of the object lock object created"
+  type        = string
+  default     = "ENABLED"
+
+  validation {
+    condition     = contains(["ENABLED", "DISABLED"], var.object_lock_status)
+    error_message = "Invalid object lock status. Must be one of: ENABLED, DISABLED"
+  }
+}
+
 variable "object_lock_mode" {
   description = "Object lock (WORM) mode."
   type        = string

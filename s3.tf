@@ -1,9 +1,9 @@
 locals {
-  object_lock_enabled = {
+  object_lock = var.object.lock_status == "ENABLED" ? {
+    status         = "ENABLED"
     mode           = var.object_lock_mode
     retention_days = var.object_lock_retention_days
-  }
-  object_lock_disabled = {
+    } : {
     status = "DISABLED"
   }
 }
@@ -17,7 +17,7 @@ resource "ovh_cloud_storage_object_bucket" "bucket" {
     status = var.versioning
   }
 
-  object_lock = null
+  object_lock = var.object_lock ? local.object_lock : null
 
   tags = length(var.tags) > 0 ? var.tags : null
 }
